@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="list-group songs">
+    {{#if canCreateSong}}
+      <div class="list-group-item">
+        <form class="new-song-form" {{action "createSong" on="submit"}}>
+          {{input type="text" class="new-song" placeholder="New song" value=title}}
+          <button class="btn btn-primary btn-sm new-song-button" disabled={{isAddButtonDisabled}} {{action "createSong"}}>Add</button>
+        </form>
+      </div>
+    {{/if}}
+    {{#unless canCreateSong}}
+      <div class="list-group-item empty-list">
+        <div class="empty-message">
+          There are no songs yet. Why don't you <a href="#" {{action "enableSongCreation"}}> create one? </a>
+        </div>
+      </div>
+    {{/unless}}
+  </div>
+  {{#each model.songs as |song|}}
+    <div class="list-group-item song">
+      {{song.title}}
+      {{star-rating item=song rating=song.rating on-click=(action "updateRating")}}
+    </div>
+  {{/each}}
+</div>
