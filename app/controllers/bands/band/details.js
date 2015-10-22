@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+
   isEditing: false,
 
   actions: {
@@ -10,6 +11,7 @@ export default Ember.Controller.extend({
 
     save: function() {
       this.set('isEditing', false);
+      return true;
     }
   }
 });
