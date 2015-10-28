@@ -34,7 +34,7 @@ var songs = SongCollection.create();
 // songs.get('content').pushObject(blackDog);
 // songs.get('content').pushObject(yellowLedbetter);
 // songs.get('content').pushObject(pretender);
-songs.get('content').pushObjects([blackDog, yellowLedbetter, pretender])
+songs.get('content').pushObjects([blackDog, yellowLedbetter, pretender]);
 
 window.songs = songs;
 
