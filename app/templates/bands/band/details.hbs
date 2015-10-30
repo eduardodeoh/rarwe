@@ -9,7 +9,7 @@
       <button class="btn btn-primary pull-right" {{action "edit"}}>Edit</button>
     {{/if}}
     <div class="clearfix"></div>
-    {{#if isEditing}}
+    {{#liquid-if isEditing class="band-description"}}
       <div class="form-group">
         {{textarea class="form-control" value=model.description}}
       </div>
@@ -17,6 +17,6 @@
       <p>
         {{model.description}}
        </p>
-    {{/if}}
+    {{/liquid-if}}
   </div>
 </div>
